@@ -1,9 +1,9 @@
-# 마인드벗
+# Text2Storyboard
 
 <div align="center">
-<h3>23-2 YBIGTA 컨퍼런스</h3>
+<h3>24-1 YBIGTA 컨퍼런스</h3>
 
-인지행동치료(CBT) 기반의 심리 상담 보조 서비스 프로젝트
+웹툰 작가를 위한 콘티 생성기
 
 <img src="https://img.shields.io/badge/React Native-61DAFB?style=for-the-badge&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=FastAPI&logoColor=white"> <img src="https://img.shields.io/badge/OpenAI API-412991?style=for-the-badge&logo=OpenAI&logoColor=white"> <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white">
 
@@ -18,9 +18,7 @@
 
 ## 문제 정의
 
-대한민국의 우울증 평생 유병률은 약 36.8%로 OECD 국가 중 1위이다. 즉 3명 중 1명이 일생 중 최소 한 번은 우울증을 앓는다는 뜻이다. 특히 국내 성인 8명 중 1명은 중증 우울증을 경험한다고 한다. 이에 반해 정신장애 진단 후 전문가 상담 및 우울증 치료 비율은 약 10%로 OECD 최저 수준이다.
-
-현상에 대한 주요 원인으로는 **비싼 진료/상담 가격, 사회적 편견 및 시공간적 제약으로 인한 접근성 부족**을 꼽을 수 있다. 이를 해결하기 위해 **인지 행동 치료(CBT) 기반 챗봇**을 만들어 기존의 비용, 프라이버시, 접근성 허들을 해결하고자 한다.
+웹툰 작가의 작업 과정에서 콘티 작업은 중요하면서도 시간이 다소 걸리는 작업 중 하나이다. 웹툰 작가의 대본/시나리오를 바탕으로 콘티를 생성함으로써 웹툰 작가의 작업 시간을 축소하고, 웹툰 작가의 노동 환경을 개선하는 것을 목적으로 한다.
 
 ## 세부 목표
 
