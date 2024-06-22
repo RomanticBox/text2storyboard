@@ -7,7 +7,7 @@ import transformers
 import openai
 import json
 
-from diffusers import StableDiffusionPipeline
+from diffusers import StableDiffusionXLPipeline
 from huggingface_hub import login
 login(token='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')
 
@@ -128,16 +128,15 @@ def save_result(response):
 def generate_images(response):
 
     print('******* Image Generation Started *******')
-    pipe = StableDiffusionPipeline.from_pretrained(sdxl_model)
-    pipe = pipe.to('cuda')
+    pipe = StableDiffusionXLPipeline.from_pretrained(sdxl_model)
 
     # modify this part to apply style transfer
     for idx in range(response['sentence_num']):
 
         print(f'*******{idx+1}th image generating . . . *******')
 
-        img_cap = response['image_caption'][idx]
-        img = pipe(img_cap[3:]).images[0] # 단순 llm 결과만 넣은 것 ( sks identifier 적용 X )
+        img_cap = response['image_caption'][idx][3:]
+        img = pipe(img_cap).images[0] # 단순 llm 결과만 넣은 것 ( sks identifier 적용 X )
 
         img.save(image_output_path + f'{idx+1}.png')
 
