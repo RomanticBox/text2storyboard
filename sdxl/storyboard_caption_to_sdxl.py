@@ -128,7 +128,7 @@ def save_result(response):
 def generate_images(response):
 
     print('******* Image Generation Started *******')
-    pipe = StableDiffusionXLPipeline.from_pretrained(sdxl_model)
+    pipe = StableDiffusionXLPipeline.from_pretrained(sdxl_model).to('cuda')
 
     # modify this part to apply style transfer
     for idx in range(response['sentence_num']):
