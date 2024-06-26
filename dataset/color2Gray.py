@@ -26,7 +26,7 @@ def convert_to_grayscale(input_dir, output_dir):
             print(f"Grayscale image saved to {gray_image_path}")
 
 
-def process_directories(base_dir):
+'''def process_directories(base_dir):
     for dir_name in os.listdir(base_dir):
         if dir_name.startswith('color-'):
             input_dir = os.path.join(base_dir, dir_name)
@@ -37,3 +37,6 @@ def process_directories(base_dir):
 # Use the current directory as the base directory
 base_directory_path = os.path.abspath('./')
 process_directories(base_directory_path)
+'''
+convert_to_grayscale("./color-rough", "./gray-rough")
+
