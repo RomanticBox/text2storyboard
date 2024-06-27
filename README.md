@@ -13,7 +13,7 @@
 - [문제 정의](#문제-정의)
 - [파이프라인](#파이프라인)
 - [접근 방법](#접근-방법)
-- [결과 및 주요 기능](#결과-및-주요-기능)
+- [실행예시 ](#실행-예시)
 - [팀 구성](#팀-구성)
 
 ---
@@ -117,7 +117,12 @@ StoryWeaver은 다음과 같은 파이프라인을 거쳐 작동한다.
 
 ## 실행 예시
 
-- 실행 이미지
+![Main](/imgs/1.PNG)
+![Storytelling Input](/imgs/2.PNG)
+![Character Input](/imgs/3.PNG)
+![Style Selection](/imgs/4.PNG)
+![Character Image Selection](/imgs/5.PNG)
+![Output](/imgs/6.PNG)
 
 ---
 
@@ -125,10 +130,10 @@ StoryWeaver은 다음과 같은 파이프라인을 거쳐 작동한다.
 
 |이름|팀|역할|
 |-|-|-|
-|**김예린**|DA|팀장/LLM 파이프라인/프론트엔드/발표자료|
+|**김예린**|DA|팀장/LLM pipeline/Frontend/PresentationMaterial|
 |**김채현**|DS|LLM|
 |**남세현**|DS| ... |
 |**서건하**|DE|백엔드/프론트/ ... |
-|**양인혜**|DS| ... |
-|**이성현**|DS| ... |
+|**양인혜**|DS| dataset preparation/data processing/DreamBooth finetuning|
+|**이성현**|DS| dataset preparation/data processing/DreamBooth finetuning|
 |**정수현**|DS| ... |
