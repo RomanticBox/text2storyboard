@@ -1,4 +1,4 @@
-.Body {
+Body {
     display: flex;
     grid-template-columns: 1fr 1fr; /* 2개의 컬럼을 가진 그리드 레이아웃 */
     align-items: center;
@@ -20,9 +20,9 @@
 .inputContainer p {
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* 위 여백 조정 */
+    margin-top: 10px; /* 위 여백 조정 */
     margin-bottom: 70px; /* 아래 여백 조정 */
-    margin-left: 20px;
+    margin-left: 0px;
     font-size: 2rem; /* 글자 크기 조정 */
     color: #666; /* 글자 색상 조정 */
 }
@@ -45,7 +45,7 @@ label {
     text-decoration: none;
     color: black;
     background-color: #ffffff; /* Match with your gradient */
-    border: black solid 3px;
+    border: rgb(27, 27, 27) 3px;
     border-radius: 8px; /* 더 큰 border-radius 값 */
     transition: background-color 0.3s ease;
     font-size: 20px; /* 더 큰 글자 크기 */
@@ -61,7 +61,7 @@ label {
     text-decoration: none;
     color: black;
     background-color: #ffffff; /* Match with your gradient */
-    border: black solid 3px;
+    border: rgb(27, 27, 27) 3px;
     border-radius: 8px; /* 더 큰 border-radius 값 */
     transition: background-color 0.3s ease;
     font-size: 20px; /* 더 큰 글자 크기 */
@@ -90,13 +90,13 @@ label {
     margin-left: 310px;
     padding: 15px 10px; /* 조정된 패딩 값 */
     text-decoration: none;
-    color: black;
-    background-color: #A0C0F2; /* Match with your gradient */
+    color: white;
+    background-color: #333; /* Match with your gradient */
     border: none;
-    border-radius: 8px; /* 더 큰 border-radius 값 */
+    border-radius: 10px; /* 더 큰 border-radius 값 */
     transition: background-color 0.3s ease;
     font-size: 20px; /* 더 큰 글자 크기 */
-    width: 200px; /* 예시로 너비를 250px로 설정 */
+    width: 240px; /* 예시로 너비를 250px로 설정 */
     text-align: center; /* 텍스트를 가운데 정렬 */
     display: inline-block; /* inline-block으로 설정하여 너비 적용 */
     line-height: 1; /* 텍스트의 줄 간격을 1로 설정 */

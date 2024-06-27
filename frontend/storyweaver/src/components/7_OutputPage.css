@@ -12,11 +12,11 @@
     text-align: left;
 }
 
-h1 {
+.h1 {
     margin-top: 20px; /* Adjust top margin of h1 for positioning */
     margin-bottom: 30px; /* Adjust bottom margin of h1 for spacing */
     margin-left: 50px; /* Adjust left margin of h1 for positioning */
-    font-size: 5rem;
+    font-size: 3rem;
     color: black;
 }
 

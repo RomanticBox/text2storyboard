@@ -1,4 +1,13 @@
 /* 3_LoadingPage.css */
+.box-container {
+  font-size: 60px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
 .progress-bar {
     width: 100%;
     background-color: #f3f3f3;
@@ -9,7 +18,7 @@
   
   .progress {
     height: 20px;
-    background-color: #4caf50;
+    background-color: #505050;
     width: 0%;
     transition: width 1s ease;
   }
