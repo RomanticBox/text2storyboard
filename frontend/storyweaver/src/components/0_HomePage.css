@@ -1,0 +1,67 @@
+/* HomePage.css */
+
+.body {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2개의 컬럼을 가진 그리드 레이아웃 */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #dbe9f8, #fcefee, #ffffff);
+    color: #333;
+    text-align: left;
+}
+
+.content {
+    grid-column: 2 / span 1; /* 두 번째 열에 배치 */
+}
+
+.image-wrapper {
+    grid-column: 1 / span 1; /* 첫 번째 열에 배치 */
+}
+
+h1 { /* StoryWeaver title */
+    margin-top: 20px; /* Adjust top margin of h1 for positioning */
+    margin-bottom: 30px; /* Adjust bottom margin of h1 for spacing */
+    margin-left: 50px; /* Adjust left margin of h1 for positioning */
+    font-size: 5rem;
+}
+
+.content1 { /* Subtitle */
+    margin-left: 50px; 
+    grid-column: 2 / span 1; /* 두 번째 열에 배치 */
+    margin-bottom: 40px; /* 아래 여백 조정 */
+    font-size: 1.5rem; /* 글자 크기 조정 */
+    color: #666; /* 글자 색상 조정 */
+    grid-row: 2 / span 1; /* 두 번째 행에 배치 */
+}
+
+.link-button {
+    margin-top: 0px;
+    margin-bottom: 90px;
+    margin-left: 200px;
+    padding: 15px 10px; /* 조정된 패딩 값 */
+    text-decoration: none;
+    color: white;
+    background-color: black; /* Match with your gradient */
+    border: none;
+    border-radius: 8px; /* 더 큰 border-radius 값 */
+    transition: background-color 0.3s ease;
+    font-size: 20px; /* 더 큰 글자 크기 */
+    width: 240px; /* 예시로 너비를 250px로 설정 */
+    text-align: center; /* 텍스트를 가운데 정렬 */
+    display: inline-block; /* inline-block으로 설정하여 너비 적용 */
+    line-height: 1; /* 텍스트의 줄 간격을 1로 설정 */
+}
+
+.link-button:hover {
+    background-color: #a5e9ff; /* Add hover effect */
+}
+
+img {
+    grid-column: 2 / span 1; /* 두 번째 열에 배치 */
+    grid-row: 2 / span 1; 
+    margin-left: 10px; /* 이미지와 다른 컨텐츠 사이의 간격 조정 */
+    max-width: 100%; /* 이미지의 최대 너비 설정 (선택 사항) */
+}
