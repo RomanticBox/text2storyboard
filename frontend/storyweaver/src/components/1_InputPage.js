@@ -13,8 +13,8 @@ const HomePage = () => {
 
     return (
         <div className="inputContainer">
-            <h1>Tell us about your own story ✏️</h1>
-            <p>You can get better result if you let us know more specific...</p>
+            <h1>Tell us about your own story</h1>
+            <p>You can get better result if you let us know more specific!</p>
 
             <div className="box-container">
             
@@ -34,7 +34,7 @@ const HomePage = () => {
                     />
                 </div>
                 
-                <Link to="/input2" className="button-container">Submit 📮</Link>
+                <Link to="/input2" className="button-container">Submit</Link>
             </div>
         </div>
     );
