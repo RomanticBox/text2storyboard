@@ -17,19 +17,19 @@ login(token='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')
 openai.api_key = 'sk-proj-q8qVMtlcT0kDQhxZb1huT3BlbkFJDwhBYc6hMGBUzVyyviYk'
 
 get_input_from_users = False # 이부분을 True로 바꾸면 사용자로부터 직접 인풋을 받음 / False로 설정시 미리 저장해둔 샘플이 자동으로 input으로 들어감
-set_dir = '/mnt/c/Users/yelin/Documents/GitHub/Ybigta_assignment/text2storyboard/llm'
+set_dir = '/root/text2storyboard/llm'
 
 model_name = "gpt-3.5-turbo-instruct"
-input_path = './sample_inputs/sample_inputs.json'
+input_path = '/root/text2storyboard/llm/sample_inputs/sample_inputs.json'
 
 prompt_path = '/prompts/prompts.json'
 prompt_type = '1shot'
 
-output_path = '/outputs/'
-output_file_name = 'response_{0}_{1}.json'.format(model_name,prompt_type)
+output_path = '/outputs'
+output_file_name = 'response_{0}_{1}d.json'.format(model_name,prompt_type)
 
 sdxl_model = "stabilityai/stable-diffusion-xl"
-image_output_path = '/generated_images/'
+image_output_path = './generated_images/'
 
 
 ### STORYBOARD CAPTION GENERATION PART
@@ -112,6 +112,53 @@ def generate_response(prompt_list,input_data):
     return response
 
 
+def asking_who(response):
+    # 프롬프트 리스트 → LLM → 주요 등장인물을 알아내기 (한명만)
+    # response['image_caption']
+    
+    #prompt_list = f"Who is the main character in {response['image_caption'][0]}? " + " Please choose only one main character." + " The main character in the story is "
+    prompt_list = f"Describe in 200 words, Who is the main character in {response['image_caption'][:]}? " + " Please choose only one main character."
+    # character_name = f"who is the main character in {response['image_caption'][:]}? Give me only one main character's name."
+
+    
+    output = openai.Completion.create(
+        model=model_name,
+        prompt=prompt_list,
+        temperature=0.7,
+        max_tokens=200)
+    
+    # character_name = openai.Completion.create(
+    #     model=model_name,
+    #     prompt=character_name,
+    #     temperature=0.7,
+    #     max_tokens=50)
+    
+    # character_name = character_name.choices[0].text.strip()
+    output = output.choices[0].text.strip()
+    return output
+
+def making_sdxl_prompt(response):
+    # 등장인물을 묘사하는 것만 LLM에 넣어서 sdxl 프롬프트를 만들어달라고 하기.
+    
+    prompt_list = f"Given the response: '{response}', please create an SDXL prompt based on this information."
+    #prompt_list = f"Given the response: '{response}', please create an SDXL prompt based on this information in 200 words."
+    # output = openai.Completion.create(
+    #     model=model_name,
+    #     prompt=prompt_list,
+    #     temperature=0.7)
+    
+    output = openai.Completion.create(
+        model=model_name,
+        prompt=prompt_list,
+        temperature=0.7,
+        max_tokens=200)
+    
+    output = output.choices[0].text.strip()
+
+    
+    return output
+    
+
 # save file
 def save_result(response):
 
@@ -125,9 +172,26 @@ def save_result(response):
 ### SDXL IMAGE GENERATION PART
 
 # image generation
-def generate_images(response):
+def generate_character_sample_images(response):
 
     print('******* Image Generation Started *******')
+    pipe = StableDiffusionXLPipeline.from_pretrained(sdxl_model).to('cuda')
+
+    # modify this part to apply style transfer
+    for idx in range(6):
+
+        print(f'*******{idx+1}th character sample image generating . . . *******')
+
+        img_cap = response
+        img = pipe(img_cap).images[0] # 단순 llm 결과만 넣은 것 ( sks identifier 적용 X )
+
+        img.save(image_output_path + f'character_sample{idx+1}.png')
+
+
+
+def generate_images(response):
+
+    print('******* Base Image Generation Started *******')
     pipe = StableDiffusionXLPipeline.from_pretrained(sdxl_model).to('cuda')
 
     # modify this part to apply style transfer
@@ -138,8 +202,72 @@ def generate_images(response):
         img_cap = response['image_caption'][idx][3:]
         img = pipe(img_cap).images[0] # 단순 llm 결과만 넣은 것 ( sks identifier 적용 X )
 
-        img.save(image_output_path + f'{idx+1}.png')
+        img.save(image_output_path + f'image_{idx+1}.png')
 
+# def cnt_main_character(response, main_character):
+#     # 프롬프트 결과에서 찾은 주요 등장인물이 몇번째 문장에 등장하는지 저장하기 
+#     explain = response['image_caption']
+    
+#     # 문장을 분리
+#     sentences = explain.split('.')
+    
+#     # 등장하는 문장 번호를 저장할 리스트
+#     sentence_numbers = []
+
+#     # LLM에게 문장에서 주요 등장인물이 등장하는지 확인하는 작업을 요청하는 프롬프트 작성
+#     for i, sentence in enumerate(sentences):
+#         if sentence.strip():  # 빈 문장은 무시
+#             prompt = (
+#                 f"Given the sentence: \"{sentence.strip()}\" and the main character description \"{main_character}\", "
+#                 "does this sentence contain the main character? Answer with 'yes' or 'no'."
+#             )
+            
+#             # OpenAI API 호출
+#             response = openai.Completion.create(
+#                 model=model_name,  # 모델 이름 (적절히 변경)
+#                 prompt=prompt,
+#                 temperature=0.7,
+#                 max_tokens=10
+#             )
+            
+#             # LLM 응답을 확인하여 문장 번호를 저장
+#             llm_response = response.choices[0].text.strip().lower()
+#             if llm_response == 'yes':
+#                 sentence_numbers.append(i + 1)  # 문장 번호는 1부터 시작
+    
+#     return sentence_numbers
+
+
+
+def cnt_main_character(response, main_character):
+    # 프롬프트 결과에서 찾은 주요 등장인물이 몇번째 문장에 등장하는지 저장하기 
+    explain = response['image_caption']
+    
+    # 등장하는 문장 번호를 저장할 리스트
+    sentence_numbers = []
+
+    # LLM에게 문장에서 주요 등장인물이 등장하는지 확인하는 작업을 요청하는 프롬프트 작성
+    for i, sentence in enumerate(explain):
+        if sentence.strip():  # 빈 문장은 무시
+            prompt = (
+                f"Given the sentence: \"{sentence.strip()}\" and the main character \"{main_character}\", "
+                "does this sentence contain the main character? Answer with 'yes' or 'no'."
+            )
+            
+            # OpenAI API 호출
+            response = openai.Completion.create(
+                model=model_name,  # 모델 이름 (적절히 변경)
+                prompt=prompt,
+                temperature=0.7,
+                max_tokens=10
+            )
+            
+            # LLM 응답을 확인하여 문장 번호를 저장
+            llm_response = response.choices[0].text.strip().lower()
+            if llm_response == 'yes':
+                sentence_numbers.append(i + 1)  # 문장 번호는 1부터 시작
+    
+    return sentence_numbers
 
 
 # main
@@ -152,13 +280,29 @@ def main():
     else: 
         input_data = load_input()
 
-    prompt_list = load_prompt(input_data=input_data,prompt_type=prompt_type)
+    prompt_list = load_prompt(input_data=input_data, prompt_type=prompt_type)
     response = generate_response(prompt_list,input_data)
-
+    #print(response)
+    
     save_result(response)
+    
+    output = asking_who(response) # 주요 등장인물을 알아낸 결과 -> 프론트로 전달해야함
+    # breakpoint()
+    # output, character_name = asking_who(response)
+    # print(output)
+    # print(haracter_name)
+
+
+
+    cnt_main_character_in_output = cnt_main_character(response, main_character)
+    #고칠점 : token 잘리는거 고치기 -> 몇 자 이내로 해줘 ->done
+    input = 'maya, who has long hair is playing with her dog' # 여기 고쳐야 함. 프론트에서 사용자한테서 입력받은 정보로 
+    sdxl_prompt = making_sdxl_prompt(input)
+
+    
 
     # SDXL IMAGE GENERATION PART
-    
+    generate_character_sample_images(sdxl_prompt)
     generate_images(response)
 
 
