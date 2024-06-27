@@ -94,7 +94,7 @@ StoryWeaver은 다음과 같은 파이프라인을 거쳐 작동한다.
 3. **SDXL**
 
     1. **Dreambooth Training**
-        - 적은 양의 이미지로도 text2image 모델을 개인화할 수 있는 학습 방법
+        - 적은 양의 이미지로도 text2image 모델을 개인화할 수 있는 학습 방법이다.
         - Kohya Dreambooth를 활용하여 각 그림체별 총 5개의 SDXL 모델을 학습시켰다.
         - full-training보다 효율적인 학습이 가능하며, Identifier token을 프롬프트에 넣어 간단히 학습된 스타일을 반영한 이미지를 생성할 수 있다.
 
