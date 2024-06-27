@@ -9,7 +9,7 @@ const images = [
   { src: './images/0_image.png', alt: 'Image 4', description: 'Description for Image 4' },
 ];
 
-const LoadingPage = () => {
+const OutputPage = () => {
   const downloadImage = (src) => {
     saveAs(src, src.split('/').pop());
   };
@@ -53,4 +53,4 @@ const LoadingPage = () => {
   );
 };
 
-export default LoadingPage;
+export default OutputPage;

@@ -7,7 +7,7 @@ import image3 from './images/image3.png';
 import image4 from './images/image4.png';
 import image5 from './images/image5.png';
 
-const ImageButtons = () => {
+const StylePage = () => {
   const navigate = useNavigate(); // useNavigate hook
 
   const handleClick = (imageNumber) => {
@@ -19,7 +19,7 @@ const ImageButtons = () => {
 
   return (
     <div>
-      <h2>Select your own storyboard style ✏️</h2>
+      <h2>Select your own storyboard style</h2>
       <div className="button-container1">
         <button className="image-button" onClick={() => handleClick(1)}>
           <img src={image1} alt="Button 1" />
@@ -56,4 +56,4 @@ const ImageButtons = () => {
   );
 };
 
-export default ImageButtons;
+export default StylePage;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './2_InputPage2.css';
 
-const InputPage  = () => {
+const InputPage2  = () => {
     // State to manage the text input and placeholder visibility
     const [description, setDescription] = useState('');
 
@@ -13,7 +13,7 @@ const InputPage  = () => {
 
     return (
         <div className="inputContainer">
-            <h1>Tell us more about your main character... ✏️</h1>
+            <h1>Tell us more about your main character.</h1>
             <p>Any description on gender, appearance, style, or personality would be helpful!</p>
 
             <div className="box-container">
@@ -29,10 +29,10 @@ const InputPage  = () => {
                     />
                 </div>
                 
-                <Link to="/style" className="button-container">Submit 📮</Link>
+                <Link to="/style" className="button-container">Submit</Link>
             </div>
         </div>
     );
 }
 
-export default InputPage ;
+export default InputPage2 ;
