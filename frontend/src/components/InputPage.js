@@ -34,7 +34,7 @@ const HomePage = () => {
                     />
                 </div>
                 
-                <Link to="/input" className="button-container">Submit 📮</Link>
+                <Link to="/image-buttons" className="button-container">Submit 📮</Link>
             </div>
         </div>
     );

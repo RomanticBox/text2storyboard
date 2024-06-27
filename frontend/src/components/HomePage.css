@@ -59,13 +59,12 @@ h1 {
 }
 
 
-
 .link-button:hover {
     background-color: #fcefee; /* Add hover effect */
 }
+
 
 img {
     margin-left: 150px; /* 이미지와 다른 컨텐츠 사이의 간격 조정 */
     max-width: 70%; /* 이미지의 최대 너비 설정 (선택 사항) */
 }
-

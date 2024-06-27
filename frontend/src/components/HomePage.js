@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
-import image from './image.png';
+// import image from './image.png';
+import image from './image_circle.gif';
 
 const HomePage = () => {
     return (
