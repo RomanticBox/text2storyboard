@@ -1,0 +1,108 @@
+.inputContainer {
+    //display: flex;
+    //grid-template-columns: 1fr 1fr; /* 2개의 컬럼을 가진 그리드 레이아웃 */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    background: linear-gradient(to right, #dbe9f8, #fcefee, #ffffff);
+    color: #333;
+}
+
+.inputContainer h1 {
+    font-size: 60px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.inputContainer p {
+    margin-top: 20px; /* 위 여백 조정 */
+    margin-bottom: 70px; /* 아래 여백 조정 */
+    margin-left: 470px;
+    font-size: 1.5rem; /* 글자 크기 조정 */
+    font-style: italic; /* 이탤릭체로 설정 */
+    color: #666; /* 글자 색상 조정 */
+}
+
+label {
+    font-weight: bold;
+  }
+
+.box-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2개의 컬럼을 가진 그리드 레이아웃 */
+
+}
+
+.box-example {
+    grid-column: 1 / span 1; 
+    margin-left: 130px; /* 왼쪽 여백 조정 */
+    margin-right: 130px; /* 오른쪽 여백 조정 */
+    padding: 15px 15px; /* 조정된 패딩 값 */
+    text-decoration: none;
+    color: black;
+    background-color: #ffffff; /* Match with your gradient */
+    border: black solid 3px;
+    border-radius: 8px; /* 더 큰 border-radius 값 */
+    transition: background-color 0.3s ease;
+    font-size: 20px; /* 더 큰 글자 크기 */
+    width: 500px; /* 예시로 너비를 250px로 설정 */
+    text-align: none; /* 텍스트를 가운데 정렬 */
+    display: inline-block; /* inline-block으로 설정하여 너비 적용 */
+    line-height: 1.5; /* 텍스트의 줄 간격을 1로 설정 */
+}
+
+.box-description {
+    grid-column: 2 / span 1; /* 두 번째 열에 배치 */
+    padding: 15px 15px; /* 조정된 패딩 값 */
+    text-decoration: none;
+    color: black;
+    background-color: #ffffff; /* Match with your gradient */
+    border: black solid 3px;
+    border-radius: 8px; /* 더 큰 border-radius 값 */
+    transition: background-color 0.3s ease;
+    font-size: 20px; /* 더 큰 글자 크기 */
+    width: 500px; /* 예시로 너비를 250px로 설정 */
+    text-align: none; /* 텍스트를 가운데 정렬 */
+    display: inline-block; /* inline-block으로 설정하여 너비 적용 */
+    line-height: 1.5; /* 텍스트의 줄 간격을 1로 설정 */
+}
+
+.box-description textarea {
+    margin-top: 10px; /* textarea 위쪽 여백 조정 */
+    width: 100%; /* textarea를 부모 요소의 너비에 맞게 설정 */
+    height: 180px; /* textarea의 높이 조정 */
+    padding: 0px; /* 내부 패딩 값 */
+    font-size: 16px; /* 내부 글자 크기 */
+    border: none; /* 테두리 없음 */
+    outline: none; /* 포커스 시 테두리 제거 */
+    resize: vertical; /* 세로 크기 조정 가능하도록 설정 */
+}
+
+
+.button-container {
+    grid-column: 2 / span 1;
+    margin-top: 10px;
+    margin-bottom: 90px;
+    margin-left: 310px;
+    padding: 15px 10px; /* 조정된 패딩 값 */
+    text-decoration: none;
+    color: black;
+    background-color: #A0C0F2; /* Match with your gradient */
+    border: none;
+    border-radius: 8px; /* 더 큰 border-radius 값 */
+    transition: background-color 0.3s ease;
+    font-size: 20px; /* 더 큰 글자 크기 */
+    width: 200px; /* 예시로 너비를 250px로 설정 */
+    text-align: center; /* 텍스트를 가운데 정렬 */
+    display: inline-block; /* inline-block으로 설정하여 너비 적용 */
+    line-height: 1; /* 텍스트의 줄 간격을 1로 설정 */
+}
+
+
+.button-container:hover {
+    background-color: #fcefee; /* Add hover effect */
+}
