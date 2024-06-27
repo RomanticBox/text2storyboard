@@ -13,8 +13,8 @@ const HomePage = () => {
 
     return (
         <div className="inputContainer">
-            <h1>콘티로 생성하고 싶은 상황을 설명해주세요 ✏️</h1>
-            <p>"더 자세하게 설명할수록 원하는 콘티를 얻을 수 있어요!"</p>
+            <h1>Tell us about your own story ✏️</h1>
+            <p>You can get better result if you let us know more specific...</p>
 
             <div className="box-container">
             
@@ -24,7 +24,7 @@ const HomePage = () => {
                 </div>
 
                 <div className="box-description">
-                    <label>Description:</label>
+                    <label>Your Story:</label>
                     {/* Text area with conditional placeholder */} 
                     <textarea 
                         value={description} 
@@ -34,7 +34,7 @@ const HomePage = () => {
                     />
                 </div>
                 
-                <Link to="/style" className="button-container">Submit 📮</Link>
+                <Link to="/input2" className="button-container">Submit 📮</Link>
             </div>
         </div>
     );

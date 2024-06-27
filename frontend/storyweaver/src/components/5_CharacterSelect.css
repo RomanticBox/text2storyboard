@@ -1,0 +1,67 @@
+body {
+    height: 100vh;
+    padding: 20px;
+    background: linear-gradient(to right, #dbe9f8, #fcefee, #ffffff);
+    color: #333;
+}
+
+h2 {
+    font-size: 60px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.button-container1 {
+    display: flex; /* Flexbox 컨테이너로 설정 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    gap: 30px; /* 이미지 버튼 사이의 간격 (원하는 만큼 설정) */
+  }
+  
+.button-container1 img {
+    width: 200px; /* 이미지 버튼의 너비 (원하는 크기로 설정) */
+    height: auto; /* 높이 자동 조정 */
+    margin-left: 0px; /* 왼쪽 여백 조정 */
+    margin-bottom: 50px; /* 아래쪽 여백 조정 */
+    margin-top: 20px; /* 위쪽 여백 조정 */
+    border: 2px solid #000; /* 테두리를 진한 검은색으로 설정 */
+    background-color: #fff; /* 배경색을 흰색으로 설정 */
+}
+
+
+.image-button {
+    position: relative;
+    pointer-events: auto; /* 버튼 요소에 클릭 이벤트 설정 */
+    cursor: pointer; /* 마우스 포인터를 클릭 가능하게 변경 */
+  }
+
+  .image-button img {
+    display: inline-block; /* 이미지를 블록 요소로 설정하여 다른 요소와 겹치지 않도록 함 */
+    width: 200px; /* 이미지 너비 */
+    height: auto; /* 이미지 높이 자동 조정 */
+    border-radius: 8px 8px 0px 0px; /* 위쪽 둥근 모서리 */
+    overflow: hidden; /* 버튼 요소의 경계를 넘어가는 클릭 이벤트 방지 */
+}
+
+
+.button-info {
+    position: absolute;
+    left: 16%;
+    top: 75.5%;
+    width: 68%;
+    background-color: rgba(0, 0, 0, 0.7); /* 배경색과 투명도 설정 */
+    border-radius: 0 0 8px 8px; /* 아래쪽 둥근 모서리 */
+    padding: 8px;
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 요소의 전체 크기를 설정 */
+    pointer-events: none; /* 정보 텍스트도 클릭 이벤트 없음 */
+}
+
+.button-info p {
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 0px; /* 위쪽 여백 조정 */
+}

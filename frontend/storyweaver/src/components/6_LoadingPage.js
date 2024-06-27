@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import './3_LoadingPage.css';
+import './6_LoadingPage.css';
 
 const StylePage = () => {
   const [loading, setLoading] = useState(true);
