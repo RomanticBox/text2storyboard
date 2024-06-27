@@ -19,30 +19,32 @@
 
 .image-wrapper {
     grid-column: 2 / span 1; /* 두 번째 열에 배치 */
+    margin-bottom: 70px; /* 위 여백 조정 */
+    margin-left: 100px; /* 아래 여백 조정 */
 }
 
 
 h1 {
-    margin-top: 20px; /* Adjust top margin of h1 for positioning */
-    margin-bottom: 10px; /* Adjust bottom margin of h1 for spacing */
+    margin-top: 15px; /* Adjust top margin of h1 for positioning */
+    margin-bottom: 20px; /* Adjust bottom margin of h1 for spacing */
     margin-left: 100px; /* Adjust left margin of h1 for positioning */
-    font-size: 7.5rem;
+    font-size: 6rem;
 }
 
 .content1 {
     grid-column: 1 / span 1; /* 첫 번째 열에 배치 */
     margin-top: 0px; /* 위 여백 조정 */
-    margin-bottom: 10px; /* 아래 여백 조정 */
+    margin-bottom: 30px; /* 아래 여백 조정 */
     margin-left: 110px;
-    font-size: 2.2rem; /* 글자 크기 조정 */
+    font-size: 1.9rem; /* 글자 크기 조정 */
     color: #666; /* 글자 색상 조정 */
     grid-row: 2 / span 1; /* 두 번째 행에 배치 */
 }
 
 .link-button {
-    margin-top: 50px;
+    margin-top: 35px;
     margin-bottom: 90px;
-    margin-left: 300px;
+    margin-left: 240px;
     padding: 15px 10px; /* 조정된 패딩 값 */
     text-decoration: none;
     color: white;
@@ -65,13 +67,13 @@ h1 {
 }
 
 .img {
-    margin-left: 50px; /* 이미지와 다른 컨텐츠 사이의 간격 조정 */
+    margin-left: 70px; /* 이미지와 다른 컨텐츠 사이의 간격 조정 */
     max-width: 150%; /* 이미지의 최대 너비 설정 (선택 사항) */
-    width: 700px
+    width: 700px;
 }
 
 .creators{
     text-align: center;
-    margin-left: 20px;
+    margin-left: 68px;
     color: rgb(93, 93, 93);
 }
