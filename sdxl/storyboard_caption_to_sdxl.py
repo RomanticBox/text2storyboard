@@ -14,7 +14,7 @@ login(token='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')
 
 
 # set parameters
-openai.api_key = 'sk-proj-q8qVMtlcT0kDQhxZb1huT3BlbkFJDwhBYc6hMGBUzVyyviYk'
+openai.api_key = ''
 
 get_input_from_users = False # 이부분을 True로 바꾸면 사용자로부터 직접 인풋을 받음 / False로 설정시 미리 저장해둔 샘플이 자동으로 input으로 들어감
 set_dir = '/root/text2storyboard/llm'
