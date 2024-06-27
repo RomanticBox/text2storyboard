@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './1_InputPage.css';
 
-const HomePage = () => {
+const InputPage = () => {
     // State to manage the text input and placeholder visibility
     const [description, setDescription] = useState('');
 
@@ -40,4 +40,4 @@ const HomePage = () => {
     );
 }
 
-export default HomePage;
+export default InputPage;

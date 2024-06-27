@@ -19,7 +19,7 @@ const CharacterSelect = () => {
 
   return (
     <div>
-      <h2>Which character do you prefer? ✏️</h2>
+      <h2>Which character do you prefer?</h2>
       <div className="button-container1">
         <button className="image-button" onClick={() => handleClick(1)}>
           <img src={image1} alt="Button 1" />
@@ -34,6 +34,7 @@ const CharacterSelect = () => {
           <img src={image4} alt="Button 4" />
         </button>
         <button className="image-button" onClick={() => handleClick(5)}>
+          <img src={image5} alt="Button 5" />
         </button>
       </div>
     </div>
